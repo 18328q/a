@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+</head>
+<style>
+.a > span { color:red; }  /* 직속 child 에만 적용함.  */
+.b span { color:red; }  /* 하위 모든 span 에 적용함.  */
+.c div+span { color:red; }  /* div 의 우측 span 한개에만 적용.  */
+.d div~span { color:red; }  /* div 의 우측 span 모두 적용  */
+</style>
+<body>
+    <b>.a > span { color:red; }</b> // 직속 child 에만 적용함.
+    <hr>
+    <div class="a">
+        <span>aaa</span>
+        <div>sub child 의 span 은 적용되지 않음.
+            <span>aaa</span>
+            <span>aaa</span>
+            <span>aaa</span>
+        </div>
+        <span>aaa</span>
+    </div>
+
+    <br><br><!-- ############################################################################################################ -->
+
+    <b>.b span { color:blue; }</b> // 하위 모든 span 에 적용함.
+    <hr>
+    <div class="b">
+        <span>aaa</span>
+        <div>sub child 의 span 도 적용.
+            <span>aaa</span>
+            <span>aaa</span>
+            <span>aaa</span>
+        </div>
+        <span>aaa</span>
+    </div>
+
+    <br><br><!-- ############################################################################################################ -->
+
+    <b>.c div+span { color:blue; }</b> // div 의 우측 span 한개에만 적용.
+    <hr>
+    <div class="c">
+        <span>aaa</span>
+        <span>aaa</span>
+        <span>aaa</span>
+        <div>sub child 의 span 은 적용되지 않음.
+            <span>aaa</span>
+            <span>aaa</span>
+            <span>aaa</span>
+        </div>
+        <span>aaa</span>
+        <span>aaa</span>
+        <span>aaa</span>
+        <span>aaa</span>
+    </div>
+
+    <br><br><!-- ############################################################################################################ -->
+
+    <b>.d div~span { color:red; }</b> // div 의 우측 span 모두 적용
+    <hr>
+    <div class="d">
+        <span>aaa</span>
+        <span>aaa</span>
+        <span>aaa</span>
+        <div>sub child 의 span 은 적용되지 않음.
+            <span>aaa</span>
+            <span>aaa</span>
+            <span>aaa</span>
+        </div>
+        <span>aaa</span>
+        <span>aaa</span>
+        <span>aaa</span>
+        <span>aaa</span>
+    </div>
+</body>
+</html>
